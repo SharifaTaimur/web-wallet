@@ -1,0 +1,12 @@
+.accounttracking {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 265px;
+  width: 600px;
+  background-color: pink;
+  margin-top: -125px;
+  border-radius: 10px;
+  box-shadow: 1px -7px 7px -6px rgba(0, 0, 0, 0.44);
+}
