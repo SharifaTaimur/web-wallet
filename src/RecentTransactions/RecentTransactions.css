@@ -1,0 +1,38 @@
+.recenttransactions__header {
+  display: flex;
+  justify-content: space-between;
+  margin: 250px 16px;
+}
+
+.recenttransactions__card {
+  /* display: flex;
+  margin-top: -179px; */
+  /* margin-left: 260px; */
+}
+
+.recenttransactions__cardtext {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0px 100px;
+}
+
+.amountofexpense {
+  position: absolute;
+  right: 100px;
+}
+
+.cardsitem {
+  margin-top: -187px;
+  padding: 0px 165px;
+}
+
+/* .recenttransactions::-webkit-scrollbar {
+  display: none;
+}
+
+.recenttransactions {
+  -ms-overlfow-overflow: none;
+  scrollbar-width: none;
+} */

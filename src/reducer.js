@@ -1,55 +1,29 @@
 export const initialState = {
-  basket: [],
-  user: null,
+  expenselistitems: [],
 };
 
-// Selector
-export const getBasketTotal = (basket) =>
-  basket?.reduce((amount, item) => item.price + amount, 0);
+//Selector
+export const getTotal = (expenselistitems) =>
+  expenselistitems?.reduce(
+    (amount, item) => Number(item.amountofexpense) + Number(amount),
+    0
+  );
+
+// export const getTotal = (expenselistitems) => {
+//   expenselistitems.reduce(function (previousValue, currentValue) {
+//     console.log(previousValue);
+//     console.log(currentValue);
+//     return Number(previousValue) + Number(currentValue.amountofexpense);
+//   }, 0);
 
 const reducer = (state, action) => {
-  console.log("in the reducer", action);
+  console.log("in the reducer-action", action);
 
   switch (action.type) {
-    case "ADD_TO_BASKET":
+    case "ADD_TO_EXPENSE":
       return {
         ...state,
-        basket: [...state.basket, action.item],
-      };
-
-    case "EMPTY_BASKET":
-      return {
-        ...state,
-        basket: [],
-      };
-
-    case "REMOVE_FROM_BASKET":
-      // finds the index of the first item with the matching action id and deleted -(can also use filter
-      // if id is unique)
-      const index = state.basket.findIndex(
-        (basketItem) => basketItem.id === action.id
-      );
-
-      //always create a new copy so you dont change orginal state directly
-      let newBasket = [...state.basket];
-
-      if (index >= 0) {
-        newBasket.splice(index, 1);
-      } else {
-        console.warn(
-          `Cant remove product (id: ${action.id}) as its not in basket!`
-        );
-      }
-
-      return {
-        ...state,
-        basket: newBasket,
-      };
-
-    case "SET_USER":
-      return {
-        ...state,
-        user: action.user,
+        expenselistitems: [...state.expenselistitems, action.item],
       };
 
     default:

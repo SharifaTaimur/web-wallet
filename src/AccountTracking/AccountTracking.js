@@ -1,21 +1,21 @@
 import React from "react";
 import "./AccountTracking.css";
 import CurrencyFormat from "react-currency-format";
-import { getTotal } from "../reducertest";
 import { useStateValue } from "./../Stateprovider";
+import { getTotal } from "./../reducer";
 
 const AccountTracking = () => {
   const [{ expenselistitems }, dispatch] = useStateValue();
-  console.log("Amountof exp>>>>>>", expenselistitems);
+
   return (
     <div className="accounttracking">
-      <h1>test</h1>
+      <h1>Subtotal ({getTotal(expenselistitems)} )!!</h1>
       <CurrencyFormat
         renderText={(value) => (
           <>
             <p>
-              {/* Subtotal ({expense.amountofexpense.length} items):{" "} */}
-              {/* <strong>{expense.amountofexpense}</strong> */}
+              Total ({expenselistitems.length} Transactions):{" "}
+              <strong>{value}</strong>
             </p>
           </>
         )}

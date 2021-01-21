@@ -4,19 +4,15 @@ import Button from "react-bootstrap/Button";
 import { useStateValue } from "./../Stateprovider";
 
 const ModalDialog = (props) => {
-  //   const [nameofexpense, setaNameofexpense] = useState([]);
-  //   const [amountofexpense, setAmountofexpense] = useState([]);
+  const [{ expenselistitems }, dispatch] = useStateValue();
   const [expenselist, setExpenseList] = useState({
     nameofexpense: "",
     amountofexpense: [],
   });
 
-  const [{ basket }, dispatch] = useStateValue();
-
   const handleOnChange = (event) => {
     const { name, value } = event.target;
     setExpenseList({ ...expenselist, [name]: value });
-    console.log(expenselist);
   };
 
   const Add = () => {
@@ -24,11 +20,9 @@ const ModalDialog = (props) => {
       type: "ADD_TO_EXPENSE",
       item: {
         nameofexpense: expenselist.nameofexpense,
-        amountofexpense: [expenselist.amountofexpense],
+        amountofexpense: expenselist.amountofexpense,
       },
-      total: [expenselist.amountofexpense],
     });
-    console.log("done");
   };
 
   return (
