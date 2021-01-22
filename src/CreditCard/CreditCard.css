@@ -1,4 +1,6 @@
 .creditcard {
+  display: flex;
+  border-radius: 0 0 50% 50% / 50px;
   background: #9796f0; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to left,
@@ -10,4 +12,14 @@
     #fbc7d4,
     #9796f0
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.creditcard__img {
+  margin-top: 97px !important;
+}
+
+.creditcard__button {
+  display: flex;
+  justify-content: flex-end;
+  margin: 70px 0px;
 }

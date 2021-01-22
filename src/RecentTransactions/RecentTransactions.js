@@ -10,8 +10,6 @@ const RecentTransactions = () => {
   const [modalShow, setModalShow] = useState(false);
   const [{ expenselistitems }, dispatch] = useStateValue();
 
-  console.log(expenselistitems.reverse());
-
   return (
     <div className="recenttransactions">
       <div className="recenttransactions__header">

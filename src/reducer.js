@@ -1,5 +1,6 @@
 export const initialState = {
   expenselistitems: [],
+  Balance: 60000,
 };
 
 //Selector
@@ -8,6 +9,15 @@ export const getTotal = (expenselistitems) =>
     (amount, item) => Number(item.amountofexpense) + Number(amount),
     0
   );
+
+export const getBalance = (expenselistitems, Balance) =>
+  expenselistitems?.reduce(
+    (amount, item) => Balance - Number(item.amountofexpense),
+    0
+  );
+
+export const getFirstItem = (expenselistitems) =>
+  expenselistitems?.slice()?.reverse()[0];
 
 // export const getTotal = (expenselistitems) => {
 //   expenselistitems.reduce(function (previousValue, currentValue) {

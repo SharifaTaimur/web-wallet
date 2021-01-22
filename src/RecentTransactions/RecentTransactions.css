@@ -1,13 +1,10 @@
 .recenttransactions__header {
   display: flex;
   justify-content: space-between;
-  margin: 250px 16px;
-}
-
-.recenttransactions__card {
-  /* display: flex;
-  margin-top: -179px; */
-  /* margin-left: 260px; */
+  margin: 250px 100px;
+  /* margin-top: 50px;
+  margin-left: 100px;
+  margin-right: 100px; */
 }
 
 .recenttransactions__cardtext {
@@ -27,12 +24,3 @@
   margin-top: -187px;
   padding: 0px 165px;
 }
-
-/* .recenttransactions::-webkit-scrollbar {
-  display: none;
-}
-
-.recenttransactions {
-  -ms-overlfow-overflow: none;
-  scrollbar-width: none;
-} */

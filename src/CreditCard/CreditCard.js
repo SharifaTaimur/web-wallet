@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Cards from "react-credit-cards";
+import Button from "react-bootstrap/Button";
 import "react-credit-cards/es/styles-compiled.css";
 import "./CreditCard.css";
 
@@ -14,7 +15,7 @@ const CreditCard = () => {
     <div className="creditcard">
       <div className="container">
         <div className="row">
-          <div className="col-6">
+          <div className="col-6 creditcard__img">
             <Cards
               cvc={cvc}
               expiry={expiry}
@@ -24,7 +25,7 @@ const CreditCard = () => {
             />
           </div>
 
-          <div className="col-6">
+          <div className="col-6 creditcard__img">
             <form>
               <div className="form-group">
                 <input
@@ -78,10 +79,14 @@ const CreditCard = () => {
                 </div>
               </div>
 
-              <div className="">
+              <div className="creditcard__button">
+                <Button variant="primary">Add Card</Button>
+              </div>
+
+              {/* <div className="">
                 <label></label>
                 <button className="btn btn-primary btn-block">ADD</button>
-              </div>
+              </div> */}
             </form>
           </div>
         </div>
