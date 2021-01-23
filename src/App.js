@@ -9,10 +9,12 @@ import Nav from "./Nav/Nav";
 function App() {
   return (
     <div className="app">
-      <Nav />
-      <CreditCard />
-      <AccountTracking />
-      {/* <Transactions /> */}
+      <div className="test">
+        <Nav />
+        <CreditCard />
+        <AccountTracking />
+        {/* <Transactions /> */}
+      </div>
       <RecentTransactions />
     </div>
   );

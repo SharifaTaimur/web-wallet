@@ -18,29 +18,33 @@ const RecentTransactions = () => {
           Add New
         </Button>
       </div>
-      <div className="cardsitem">
-        {expenselistitems
-          .slice()
-          .reverse()
-          .map((item) => (
-            <Card
-              bg="light"
-              text={"dark"}
-              style={{ width: "50rem" }}
-              className="mb-2 recenttransactions__card"
-            >
-              <Card.Body>
-                <Card.Text className="recenttransactions__cardtext">
-                  <ReceiptIcon style={{ fontSize: 40 }} />
-                  {/* {item.nameofexpense} -${item.amountofexpense} */}
-                  <div className="nameofexpense">{item.nameofexpense}</div>
-                  <div className="amountofexpense">${item.amountofexpense}</div>
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          ))}
+      <div className="scroll">
+        <div className="cardsitem">
+          {expenselistitems
+            .slice()
+            .reverse()
+            .map((item) => (
+              <Card
+                bg="light"
+                text={"dark"}
+                style={{ width: "50rem" }}
+                className="mb-2 recenttransactions__card"
+              >
+                <Card.Body>
+                  <Card.Text className="recenttransactions__cardtext">
+                    <ReceiptIcon style={{ fontSize: 40 }} />
+                    {/* {item.nameofexpense} -${item.amountofexpense} */}
+                    <div className="nameofexpense">{item.nameofexpense}</div>
+                    <div className="amountofexpense">
+                      ${item.amountofexpense}
+                    </div>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            ))}
+        </div>
+        <ModalDialog show={modalShow} onHide={() => setModalShow(false)} />
       </div>
-      <ModalDialog show={modalShow} onHide={() => setModalShow(false)} />
     </div>
   );
 };
